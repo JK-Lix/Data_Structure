@@ -1,2 +1,2 @@
-# Date_Structrue
+# Date_Structure
 Study Notes
