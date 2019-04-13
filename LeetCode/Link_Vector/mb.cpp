@@ -1,24 +1,32 @@
 /*************************************************************************
-	> File Name: 24.c
+	> File Name: .cpp
 	> Author: Lix
 	> Mail: 776579471@qq.com
 	> URL: https://github.com/JK-Lix
-	> Created Time: 2019年04月11日 星期四 18时40分56秒
+	> Created Time: 2019年
  ************************************************************************/
+
+/*
+ * Problem:
+ *
+ *
+ *
+ */
+
+
 #include<stdio.h>
 #include<stdlib.h>
+
 struct ListNode {
     int val;
     struct ListNode *next;
 };
 
+struct ListNode* _a(struct ListNode* head) {
 
-struct ListNode* swapPairs(struct ListNode* head) {
-    
 }
 
 int main() {
-    printf("24.c\n");
+    printf(".cpp\n");
     return 0;
 }
-mZ
