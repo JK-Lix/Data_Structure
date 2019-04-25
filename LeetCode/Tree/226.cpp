@@ -1,5 +1,5 @@
 /*************************************************************************
-	> File Name: .cpp
+	> File Name: 226.cpp
 	> Author: Lix
 	> Mail: 776579471@qq.com
 	> URL: https://github.com/JK-Lix
@@ -9,7 +9,7 @@
 /*
  * Problem:
  *
- *
+ * Invert a binary tree.
  *
  */
 
@@ -24,7 +24,16 @@ struct TreeNode {
     struct TreeNode *right;
 };
 
+struct TreeNode* invertTree(struct TreeNode* root) {
+    if (root == NULL) return NULL;
+    struct TreeNode *temp = root->left;
+    root->left = root->right;
+    root->right = temp;
+    invertTree(root->left), invertTree(root->right);
+    return root;
+}
+
 int main() {
-    printf(".cpp\n");
+    printf("226.cpp\n");
     return 0;
 }
