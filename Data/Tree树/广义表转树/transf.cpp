@@ -86,11 +86,13 @@ Node* build(const char* str) {
                 }
             } break;
             case 1: {
-                if (p == NULL) p = getNewNode(0);
-                if (k == 0 && !emptyStack(s)) {
-                    topStack(s)->lchild = p;
-                } else if(k == 1 && !emptyStack(s)) {
-                    topStack(s)->rchild = p;
+                if (p == NULL) {
+                    p = getNewNode(0);
+                    if (k == 0 && !emptyStack(s)) {
+                        topStack(s)->lchild = p;
+                    } else if(k == 1 && !emptyStack(s)) {
+                        topStack(s)->rchild = p;
+                    }
                 }
                 if (str[0] <= '9' && str[0] >= '0') {
                     p->key = p->key * 10 + str[0] - '0';
