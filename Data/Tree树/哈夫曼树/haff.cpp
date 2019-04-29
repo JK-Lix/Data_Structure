@@ -104,6 +104,7 @@ int main() {
     extract_huffman_code(root, code, str, 0);
     preorder(root), printf("\n");
     for (int i = 0; i < 256; i++) {
+        printf("%c\n", i);
         if (code[i]) printf("%c = %s\n", i, code[i]);
     }
     clear(root);
