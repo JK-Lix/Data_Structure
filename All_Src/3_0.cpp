@@ -1,5 +1,5 @@
 /*************************************************************************
-	> File Name: .cpp
+	> File Name: 3.cpp
 	> Author: Lix
 	> Mail: 776579471@qq.com
 	> URL: https://github.com/JK-Lix
@@ -9,17 +9,7 @@
 /*
  * Problem:
  *
- *
+ * Given a string, find the length of the longest substring without 
+ * repeating characters.
  *
  */
-
-
-#include<stdio.h>
-#include<stdlib.h>
-
-
-
-int main() {
-    printf(".cpp\n");
-    return 0;
-}
