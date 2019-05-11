@@ -22,41 +22,43 @@
 #include<stdlib.h>
 #include<string.h>
 
-//基数排序一定是稳定的，一定是低位到高位的
-void radix_sort(int* arr, int *main_ind, int n) {
+//基数排序从后往前，必为稳定排序
+
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+
+void radix_sort(int *arr, int *main_ind, int n) {
     #define MAX_N 65536
-    #define MAX_M 32769
+    #define MAX_M 32768
     #define L(x) (x & 0xffff)
-    #define H(x) (short int)((x >> 16) & 0xffff)
+    #define H(x) ((x >> 16) & 0xffff)
     int cnt[MAX_N] = {0}, *p;
     int *temp = (int *)malloc(sizeof(int) * n);
     int *ind = (int *)malloc(sizeof(int) * n);
     for (int i = 0; i < n; i++) cnt[L(arr[i])] += 1;
-    for (int i = 1; i < MAX_N; i++) cnt[i] += cnt[i - 1];
+    for (int i = 1 ; i < MAX_N; i++) cnt[i] += cnt[i - 1];
     for (int i = n - 1; i >= 0; i--) {
         temp[--(cnt[L(arr[i])])] = arr[i];
         ind[cnt[L(arr[i])]] = i;
     }
     memset(cnt, 0, sizeof(cnt));
     for (int i = 0; i < n; i++) cnt[H(temp[i])] += 1;
-    for (int i = MAX_M; i < MAX_N + MAX_M; i++) cnt[i % MAX_N] += cnt[(i - 1) % MAX_N];
+    for (int i = MAX_M; i < MAX_M + MAX_N; i++) cnt[i % MAX_N] += cnt[(i - 1) % MAX_N];
     for (int i = n - 1; i >= 0; i--) {
         arr[--(cnt[H(temp[i])])] = temp[i];
         main_ind[cnt[H(temp[i])]] = ind[i];
     }
     free(temp);
     free(ind);
-    return;
+    return ;
 }
 
-/**
- * Note: The returned array must be malloced, assume caller calls free().
- */
-int* twoSum(int* nums, int numsSize, int target, int* returnSize){
+int* twoSum(int* nums, int numsSize, int target, int *returnSize) {
     int *ind = (int *)malloc(sizeof(int) * numsSize);
-    radix_sort(nums, ind,numsSize);
+    radix_sort(nums, ind, numsSize);
     int p = 0, q = numsSize - 1;
-    while(nums[p] + nums[q] != target) {
+    while (nums[p] + nums[q] != target) {
         if (nums[p] + nums[q] > target) --q;
         else ++p;
     }
