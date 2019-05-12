@@ -1,0 +1,6 @@
+单模匹配
+
+母串S
+a e c a e a e c a e d
+a e c a e d
+模式串T

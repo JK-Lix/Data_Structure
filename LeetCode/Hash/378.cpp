@@ -1,5 +1,5 @@
 /*************************************************************************
-	> File Name: .cpp
+	> File Name: 378.cpp
 	> Author: Lix
 	> Mail: 776579471@qq.com
 	> URL: https://github.com/JK-Lix
@@ -53,6 +53,6 @@ int kthSmallest(int** matrix, int matrixSize, int* matrixColSize, int k){
 }
 
 int main() {
-    printf(".cpp\n");
+    printf("378.cpp\n");
     return 0;
 }
