@@ -90,7 +90,7 @@ int shift_or(const char *text, const char *pattern) {
     for (int i = 0; pattern[i]; i++, len++) {
         code[pattern[i]] &= ~(1 << i);
     }
-    int p = 0;
+    int p = -1;
     for (int i = 0; text[i]; i++) {
         p = (p << 1) | code[text[i]];
         if (~p & (1 << (len - 1))) return i - len + 1;
