@@ -62,6 +62,7 @@ int main() {
             case 2: printf("%s\n", find(u, b) == find(u, c) ? "Yes" : "No"); break;
         }
     }
+    clear(u);
     return 0;
 }
 
