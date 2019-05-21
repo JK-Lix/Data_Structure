@@ -1,0 +1,11 @@
+
+
+	low(i)  树高为i的情况下，最少节点数
+	low(1) = 1
+	low(2) = 2
+	low(3) = 4
+	low(4) = 8
+	low(h) = pow(2, h - 1) >= n; h = log2 n
+
+按质合并的find—union算法
+
